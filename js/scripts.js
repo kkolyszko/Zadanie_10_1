@@ -1,12 +1,21 @@
-var usersHeight = prompt("How tall is vour tree?");
+var span = $('span');
 
-function drawTree (treeHeight) {
-        star = '';
-        for (i=0; i<=treeHeight; i++){
-            document.getElementById("tree").innerHTML += star + "<br>";
-            star += '*';
-    }
-}
+$("span:even").css('color', 'red');
 
-drawTree(usersHeight);
+/*span.each(function (index, element){
+    if (index % 2 == 0) {
+        $(element).css('color', 'red');
+    };
+});*/
+
+var paragraphs = $("p");
+
+paragraphs.each(function (index, element) {
+    var button = '<button class="btn" data-tmp="' + index + '">Click me</button>'
+    $(element).append(button)
+});
+
+$("button").click(function() {
+    alert($(this).attr("data-tmp"));
+});
 
